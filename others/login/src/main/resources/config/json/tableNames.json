@@ -1,0 +1,4 @@
+{
+  "usersTable": "users",
+  "otpTable": "user_otp"
+}

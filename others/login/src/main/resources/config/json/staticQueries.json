@@ -1,0 +1,14 @@
+{
+  "login": {
+    "query": "select * from %tablename% where user_name = '%username%'",
+    "replacements": {
+      "%tablename%": "usersTable"
+    }
+  },
+  "saveOtp": {
+    "query": "insert into %tablename% (username, otp) values('%username%','%otp%') on conflict (username) do update set otp = '%otp%'",
+    "replacements": {
+      "%tablename%": "otpTable"
+    }
+  }
+}

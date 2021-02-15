@@ -4,7 +4,6 @@ package com.self.springsecurityoathserver.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -33,7 +32,7 @@ public class AuthSecurityConfig extends AuthorizationServerConfigurerAdapter {
   @Override public void configure(final ClientDetailsServiceConfigurer clients) throws Exception {
     /*
       In Password Grant type, the user sends its creds to client which then sends it to Auth. server. See URL, we pass username password in params.
-       It is depricated.
+       It is deprecated.
      */
     clients.inMemory()
            .withClient("client1")

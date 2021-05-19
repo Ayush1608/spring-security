@@ -1,1 +1,2 @@
 insert into client_details(client_id, secret, grant_type, scope) values ('client1', 'secret1', 'password', 'read');
+insert into client_details(client_id, secret, grant_type, scope) values ('client2', 'secret2', 'authorization_code', 'read');

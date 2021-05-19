@@ -48,7 +48,7 @@ public class SecurityClient implements ClientDetails {
   }
 
   @Override public Set<String> getRegisteredRedirectUri() {
-    return null;
+    return Collections.singleton("http://localhost:9080/");
   }
 
   @Override public Collection<GrantedAuthority> getAuthorities() {

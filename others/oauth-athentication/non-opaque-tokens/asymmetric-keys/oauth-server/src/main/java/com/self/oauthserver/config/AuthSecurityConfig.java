@@ -62,7 +62,7 @@ public class AuthSecurityConfig extends AuthorizationServerConfigurerAdapter {
      * storepass -> password for the file itself
      *
      * Then run below to extract public key from private key generated
-     * keytool -list -rfc --keystore sskey.jksgm | openssl x509 -inform pem -pubkey
+     * keytool -list -rfc --keystore sskey.jks | openssl x509 -inform pem -pubkey
      *
      * Then copy value of public key which has to be used in resource server.
      */

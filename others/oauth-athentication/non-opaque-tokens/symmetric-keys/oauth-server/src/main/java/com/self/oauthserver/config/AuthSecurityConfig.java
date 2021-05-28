@@ -48,7 +48,7 @@ public class AuthSecurityConfig extends AuthorizationServerConfigurerAdapter {
   @Bean
   public JwtAccessTokenConverter jwtAccessTokenConverter() {
     JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-    jwtAccessTokenConverter.setSigningKey("secret"); 
+    jwtAccessTokenConverter.setSigningKey("fkskkdjjdnsmskndfkncakdnjkbclhnksbcjsbcijbkjfsdf");
     return jwtAccessTokenConverter;
   }
 }

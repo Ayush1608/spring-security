@@ -27,7 +27,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
   @Bean
   public JwtAccessTokenConverter jwtAccessTokenConverter() {
     JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-    jwtAccessTokenConverter.setSigningKey("secret"); // same value as Authorization server.
+    jwtAccessTokenConverter.setSigningKey("fkskkdjjdnsmskndfkncakdnjkbclhnksbcjsbcijbkjfsdf"); // same value as Authorization server.
     return jwtAccessTokenConverter;
   }
 }

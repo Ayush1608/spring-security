@@ -25,9 +25,9 @@ import org.springframework.security.provisioning.UserDetailsManager;
 
 
 @Configuration
-@EnableGlobalMethodSecurity(prePostEnabled = true/*,
+@EnableGlobalMethodSecurity(prePostEnabled = true,
                             jsr250Enabled = true,
-                            securedEnabled = true*/)
+                            securedEnabled = true)
 /*
  * The prePostEnabled property enables Spring Security pre/post (@PreAuthorize, @PostAutorize, @PreFilter, @PostFilter) annotations
  * The securedEnabled property determines if the @Secured annotation should be enabled
@@ -65,13 +65,13 @@ public class SecurityConfig extends /*WebSecurityConfigurerAdapter*/ GlobalMetho
     UserDetails u1 =
       User.withUsername("admin")
           .password("admin")
-          .authorities("write")
+          .roles("ADMIN")
           .build();
 
     UserDetails u2 =
       User.withUsername("user")
           .password("user")
-          .authorities("read")
+          .roles("USER")
           .build();
 
     uds.createUser(u1);

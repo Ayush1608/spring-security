@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
 public class DocumentServiceImpl implements DocumentService {
 
   @Override
-  @PostAuthorize("hasPermission(returnObject, 'write')")
+//  @PostAuthorize("hasPermission(returnObject, 'write')")
+  @PostAuthorize("@methodAuthorizationManager.applySecurity(returnObject, 'write')")
   public List<Document> getDocuments(final String username) {
     Document document = new Document();
     document.setUsername("admin");

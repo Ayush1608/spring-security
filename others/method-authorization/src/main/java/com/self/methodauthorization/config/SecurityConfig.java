@@ -3,6 +3,8 @@ package com.self.methodauthorization.config;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.PermissionEvaluator;
@@ -34,6 +36,9 @@ import org.springframework.security.provisioning.UserDetailsManager;
  *
  */
 public class SecurityConfig extends /*WebSecurityConfigurerAdapter*/ GlobalMethodSecurityConfiguration {
+
+  @Autowired
+  private ApplicationContext applicationContext;
 
 //  @Override protected void configure(final HttpSecurity http) throws Exception {
 //    http.httpBasic();
@@ -82,6 +87,7 @@ public class SecurityConfig extends /*WebSecurityConfigurerAdapter*/ GlobalMetho
   @Override protected MethodSecurityExpressionHandler createExpressionHandler() {
     DefaultMethodSecurityExpressionHandler defaultMethodSecurityExpressionHandler = new DefaultMethodSecurityExpressionHandler();
     defaultMethodSecurityExpressionHandler.setPermissionEvaluator(getPermissionEvaluator());
+    defaultMethodSecurityExpressionHandler.setApplicationContext(applicationContext);
     return defaultMethodSecurityExpressionHandler;
   }
 
